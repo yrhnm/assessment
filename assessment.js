@@ -1,3 +1,20 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @yrhnm
+Sign out
+9
+1 0 progedu/intro-sample
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+intro-sample/assessment.js
+b9cfe87  on 16 Aug 2016
+@sifue sifue あなたのいいところ診断がEnterで動くように修正
+     
+102 lines (90 sloc)  5.33 KB
 (function () {
     'use strict';
     const userNameInput = document.getElementById('user-name');
@@ -10,7 +27,7 @@
     * @param {HTMLElement} element HTMLの要素
     */
     function removeAllChildren(element) {
-        while (element.firstChild) { // 子どもの要素があるかぎり削除
+        while (element.firstChild) { // 子どもの要素があるかぎり除去
             element.removeChild(element.firstChild);
         }
     }
@@ -36,7 +53,7 @@
         removeAllChildren(tweetDivided);
         const anchor = document.createElement('a');
         const hrefValue = 'https://twitter.com/intent/tweet?button_hashtag=%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%81%84%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D&text='
-        + encodeURIComponent(result);
+            + encodeURIComponent(result);
         anchor.setAttribute('href', hrefValue);
         anchor.className = 'twitter-hashtag-button';
         anchor.innerText = 'Tweet #%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%81%84%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D';
@@ -67,10 +84,7 @@
         '{userName}のいいところは好奇心です。新しいことに向かっていく{userName}の心構えが多くの人に魅力的に映ります。',
         '{userName}のいいところは気配りです。{userName}の配慮が多くの人を救っています。',
         '{userName}のいいところはその全てです。ありのままの{userName}自身がいいところなのです。',
-        '{userName}のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる{userName}が皆から評価されています。' 
-        '{userName}のいいところは優しさです。{userName}の優しい雰囲気や立ち振舞に多くの人が癒やされています。'
-
-        
+        '{userName}のいいところは自制心です。やばいと思ったときにしっかりと衝動を押さえられる{userName}が皆から評価されています。'
     ];
 
     /**
@@ -93,5 +107,13 @@
         return result;
     }
 
-    
+    // テストコード
+    console.assert(
+        assessment('太郎') === '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
+        '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
+    );
+    console.assert(
+        assessment('太郎') === assessment('太郎'),
+        '入力が同じ名前なら同じ診断結果を出力する処理が正しくありません。'
+    );
 })();
