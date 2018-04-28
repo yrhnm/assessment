@@ -10,7 +10,7 @@
     * @param {HTMLElement} element HTMLの要素
     */
     function removeAllChildren(element) {
-        while (element.firstChild) { // 子どもの要素があるかぎり除去
+        while (element.firstChild) { // 子どもの要素があるかぎり削除
             element.removeChild(element.firstChild);
         }
     }
@@ -36,7 +36,7 @@
         removeAllChildren(tweetDivided);
         const anchor = document.createElement('a');
         const hrefValue = 'https://twitter.com/intent/tweet?button_hashtag=%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%81%84%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D&text='
-            + encodeURIComponent(result);
+        + encodeURIComponent(result);
         anchor.setAttribute('href', hrefValue);
         anchor.className = 'twitter-hashtag-button';
         anchor.innerText = 'Tweet #%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%81%84%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D';
@@ -67,7 +67,7 @@
         '{userName}のいいところは好奇心です。新しいことに向かっていく{userName}の心構えが多くの人に魅力的に映ります。',
         '{userName}のいいところは気配りです。{userName}の配慮が多くの人を救っています。',
         '{userName}のいいところはその全てです。ありのままの{userName}自身がいいところなのです。',
-        '{userName}のいいところは自制心です。やばいと思ったときにしっかりと衝動を押さえられる{userName}が皆から評価されています。'
+        '{userName}のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる{userName}が皆から評価されています。'
     ];
 
     /**
