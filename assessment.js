@@ -1,20 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @yrhnm
-Sign out
-9
-1 0 progedu/intro-sample
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
-intro-sample/assessment.js
-b9cfe87  on 16 Aug 2016
-@sifue sifue あなたのいいところ診断がEnterで動くように修正
-     
-102 lines (90 sloc)  5.33 KB
 (function () {
     'use strict';
     const userNameInput = document.getElementById('user-name');
